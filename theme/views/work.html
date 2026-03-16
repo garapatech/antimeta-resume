@@ -1,0 +1,26 @@
+{% if resume.work %}
+    <section id="work">
+        <h2>Experiência Profissional</h2>
+        {% for item in resume.work %}
+            <div class="item">
+                <div class="work-header">
+                    <div class="work-header-company">{{ item.company }}</div>
+                    <div class="work-header-date">{{ format_date(item.startDate) }} — {{ format_date(item.endDate) if item.endDate else 'Atual' }}</div>
+                </div>
+                {% if item.position %}
+                    <div class="work-position">{{ item.position }}</div>
+                {% endif %}
+                {% if item.location %}
+                    <div class="work-location">{{ item.location }}</div>
+                {% endif %}
+                {% if item.highlights %}
+                    <ul class="highlights">
+                        {% for highlight in item.highlights %}
+                            <li>{{ highlight | safe }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </section>
+{% endif %}

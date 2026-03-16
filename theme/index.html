@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+        <meta name="author" content="{{ resume.basics.name | d('') }}">
+        <title>{{ resume.basics.name | d('') }}</title>
+        <style>
+            {% include 'style.css' %}
+        </style>
+    </head>
+    <body>
+        <div id="resume">
+            <div class="section">
+                {% include 'views/basics.html' %}
+            </div>
+            <div class="section">
+                {% include 'views/work.html' %}
+            </div>
+            <div class="section">
+                {% include 'views/education.html' %}
+            </div>
+            <div class="section">
+                {% include 'views/skills.html' %}
+            </div>
+            <div class="section">
+                {% include 'views/certifications.html' %}
+            </div>
+            <div class="section">
+                {% include 'views/volunteer.html' %}
+            </div>
+            <div class="section">
+                {% include 'views/projects.html' %}
+            </div>
+            <div class="section">
+                {% include 'views/profiles.html' %}
+            </div>
+            <div class="section">
+                {% include 'views/awards.html' %}
+            </div>
+        </div>
+    </body>
+</html>

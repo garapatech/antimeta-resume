@@ -1,0 +1,28 @@
+{% from 'partials/item.html' import render_item with context %}
+
+{% if resume.education %}
+    <section id="education">
+        <h2>Formação Acadêmica</h2>
+        {% for item in resume.education %}
+            {% call render_item(
+                title=item.institution,
+                subtitle=item.studyType,
+                extra=item.area,
+                location=item.location,
+                start_date=item.startDate,
+                end_date=item.endDate,
+                url=item.website
+            ) %}
+                {% if item.gpa %}
+                    <ul>
+                        <li>
+                            <div class="score">
+                                {{ item.gpa }}
+                            </div>
+                        </li>
+                    </ul>
+                {% endif %}
+            {% endcall %}
+        {% endfor %}
+    </section>
+{% endif %}

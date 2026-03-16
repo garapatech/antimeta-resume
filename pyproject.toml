@@ -1,0 +1,28 @@
+[project]
+name = "antimeta-resume"
+version = "1.0.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "markupsafe>=3.0.3",
+    "pydantic>=2.11.0",
+    "pydantic-settings>=2.11.0",
+    "resume-pycli>=4.1.1",
+    "weasyprint>=66.0",
+]
+
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+antimeta_resume = [
+    "theme/*.html",
+    "theme/*.css",
+    "theme/partials/*.html",
+    "theme/views/*.html",
+]

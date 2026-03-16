@@ -1,0 +1,18 @@
+{% if resume.awards %}
+    <section id="awards">
+        <h2>Prêmios e Reconhecimentos</h2>
+        <ul class="item">
+            {% for award in resume.awards %}
+                <li>
+                    {% if award.title %}
+                        {% if award.summary %}
+                            <strong>{{ award.title }}</strong>: {{ award.summary }}
+                        {% else %}
+                            <strong>{{ award.title }}</strong>
+                        {% endif %}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endif %}

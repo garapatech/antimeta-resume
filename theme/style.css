@@ -1,0 +1,201 @@
+/* Template level */
+body {
+    font-family: 'Inter', Arial, Calibri, sans-serif;
+    font-size: 11pt;
+    margin: 0.5in 0.75in;
+}
+
+h1 {
+    font-size: 20pt;
+    text-align: center;
+    margin: 5px;
+}
+
+h2 {
+    font-size: 12pt;
+    font-weight: bold;
+    border-width: 1px;
+    border-style: none none solid none;
+    margin: 10px 0 2.5px 0;
+}
+
+section {
+    margin: 3px 0;
+}
+
+ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.item {
+    margin-top: 8px;
+}
+
+.item > .item-header {
+    float: left;
+    display: block;
+}
+
+.item > .item-header > .item-header-title {
+    font-weight: bold;
+}
+
+.item > .item-header > .item-header-subtitle {
+    font-style: italic;
+}
+
+.item > .item-header > .item-header-extra {
+    font-style: italic;
+    color: #555;
+}
+
+.item > .item-details {
+    float: right;
+    text-align: right;
+}
+
+.item > .item-details > .item-details-title {
+    font-weight: bold;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Work section */
+.work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.work-header-company {
+    font-weight: bold;
+}
+
+.work-header-date {
+    font-size: 10pt;
+    white-space: nowrap;
+}
+
+.work-position {
+    font-style: italic;
+}
+
+.work-location {
+    color: #555;
+    font-size: 10pt;
+}
+
+/* Section specific */
+/* basics */
+.vertical-separator {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.vertical-separator:not(:first-child) {
+    border-left: 1px solid #000;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.col {
+    flex: 1;
+    min-width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.profile-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.profile-meta {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.profile-network {
+    font-weight: bold;
+}
+
+.profile-username {
+    font-style: italic;
+}
+
+.profile-url {
+    flex: 0 1 auto;
+    min-width: 0;
+    text-align: right;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+a {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+/* Set some print settings. */
+@media print {
+    @page {
+        size: portrait;
+        margin: 12.7mm 19mm;
+    }
+
+    .resume {
+        max-width: 100%;
+        border: 0;
+        background: #fff;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    body,
+    html,
+    .resume {
+        margin: 0;
+        padding: 0;
+    }
+
+    .controls {
+        display: none;
+    }
+
+    .section {
+        margin-bottom: 20px;
+    }
+
+    .section h2 {
+        page-break-after: avoid;
+    }
+
+    .row,
+    .col {
+        page-break-inside: avoid;
+    }
+
+    .item {
+        page-break-inside: avoid;
+    }
+}

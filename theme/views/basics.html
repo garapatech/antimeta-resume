@@ -1,0 +1,28 @@
+{% if resume.basics %}
+    <section id="basics">
+        <h1>{{ resume.basics.name | d('') }}</h1>
+        <div class="contact centered">
+            {% if resume.basics.label %}
+                <span class="vertical-separator">{{ resume.basics.label }}</span>
+            {% endif %}
+            {% if resume.basics.email %}
+                <span class="vertical-separator">{{ wrap_mail(resume.basics.email) }}</span>
+            {% endif %}
+            {% if resume.basics.phone %}
+                <span class="vertical-separator">{{ resume.basics.phone }}</span>
+            {% endif %}
+            {% if resume.basics.location.city and resume.basics.location.countryCode %}
+                <span class="vertical-separator">{{ resume.basics.location.city }}, {{ resume.basics.location.countryCode }}</span>
+            {% endif %}
+            {% if resume.basics.website %}
+                <span class="vertical-separator">{{ wrap_url(resume.basics.website) }}</span>
+            {% endif %}
+        </div>
+        {% if resume.basics.summary %}
+            <div class="summary">
+                <h2>Resumo</h2>
+                <p>{{ resume.basics.summary | safe }}</p>
+            </div>
+        {% endif %}
+    </section>
+{% endif %}

@@ -13,13 +13,17 @@ def format_date(date: Any) -> str:
 
     text: str = str(date).strip().replace("Z", "+00:00")
     try:
-        for format in ("%Y-%m", "%Y-%m-%d"):
+        for input_format, output_format in (
+            ("%Y", "y"),
+            ("%Y-%m", "MMM y"),
+            ("%Y-%m-%d", "MMM y"),
+        ):
             try:
-                dt = datetime.strptime(text, format)
-                break
+                dt = datetime.strptime(text, input_format)
+                return babel_format_date(dt, format=output_format, locale=settings.locale)
             except ValueError:
                 pass
-        else: dt = datetime.fromisoformat(text)
+        dt = datetime.fromisoformat(text)
     except ValueError:
         return default_value
     return babel_format_date(dt, format="MMM y", locale=settings.locale)
